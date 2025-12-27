@@ -1,10 +1,10 @@
 ship = Curiosity
 version = 1.12.2
-description = 
+description = Ag1 for suspension deploy¨Ag2 for mast unlock
 type = VAB
-size = 1.76236928,0.790052414,2.14927888
+size = 1.76236951,0.790752411,2.1305356
 steamPublishedFileId = 0
-persistentId = 4266699435
+persistentId = 4084663359
 rot = 0,0,0,0
 missionFlag = Squad/Flags/default
 vesselType = Debris
@@ -16,7 +16,7 @@ PART
 {
 	part = CommonRoverBody_4293414266
 	partName = Part
-	persistentId = 240013901
+	persistentId = 3925942293
 	pos = 3.57627869E-07,15.0000019,3.57627869E-06
 	attPos = 0,0,0
 	attPos0 = 3.57627869E-07,15.0000019,3.57627869E-06
@@ -41,18 +41,20 @@ PART
 	link = BKI.RoboticArm-curiosity_4293413058
 	link = Rocker.BKI_4293411008
 	link = Rocker.BKI_4293409294
-	link = TenacityRoverRT.BKI_4293397700
+	link = TenacityRoverRT.BKI_4293414302
 	link = TenacityRoverMast.BKI_4293372482
+	link = BKIMSLHGAntenna_4293418556
 	attN = right,Null_0_0.359423757|0|0_0.625|0|0_0.359423757|0|0_0.625|0|0
 	attN = left,Null_0_-0.359423757|0|0_-0.625|0|0_-0.359423757|0|0_-0.625|0|0
-	attN = connect,Rocker.BKI_4293411008_0.37478435|-0.00687499996|-0.0993749946_0.625|0|0_0.37478435|-0.00687499996|-0.0993749946_0.625|0|0
-	attN = connect,Rocker.BKI_4293409294_-0.37478435|-0.00687499996|-0.0993749946_-0.625|0|0_-0.37478435|-0.00687499996|-0.0993749946_-0.625|0|0
-	attN = back,TenacityRoverRT.BKI_4293397700_0|0|0.4842906_0|0|0.625_0|0|0.4842906_0|0|0.625
+	attN = connect,Null_0_0.259095609|0.0813968778|-0.4842906_0|0|-0.625_0.259095609|0.0813968778|-0.4842906_0|0|-0.625
+	attN = connect,Null_0_-0.37478435|-0.00687499996|-0.0993749946_-0.625|0|0_-0.37478435|-0.00687499996|-0.0993749946_-0.625|0|0
+	attN = back,TenacityRoverRT.BKI_4293414302_0|0|0.4842906_0|0|0.625_0|0|0.4842906_0|0|0.625
 	attN = front,Null_0_0|0|-0.4842906_0|0|-0.625_0|0|-0.4842906_0|0|-0.625
-	attN = connect,BKI.RoboticArm-curiosity_4293413058_0.259095609|0.0813968778|-0.4842906_0|0|-0.625_0.259095609|0.0813968778|-0.4842906_0|0|-0.625
+	attN = connect,Null_0_0.259095609|0.0813968778|-0.4842906_0|0|-0.625_0.259095609|0.0813968778|-0.4842906_0|0|-0.625
 	attN = bottom,Null_0_0|-0.143785|0_0|-0.625|0_0|-0.143785|0_0|-0.625|0
 	attN = top,Null_0_0|0.143785|0_0|0.625|0_0|0.143785|0_0|0.625|0
 	attN = N1,TenacityRoverMast.BKI_4293372482_-0.35213685|0.143785|-0.415867507_8.74227766E-08|0|-1_-0.35213685|0.143785|-0.415867507_8.74227766E-08|0|-1
+	attN = N2,BKIMSLHGAntenna_4293418556_0.296870619|0.143840626|0.287496299_0|1.00000012|-1.1920929E-07_0.296870619|0.143840626|0.287496299_0|1.00000012|-1.1920929E-07
 	EVENTS
 	{
 	}
@@ -142,11 +144,11 @@ PART
 		displayName = Common Rover Body
 		sequencePosition = 0
 		sequencePlaySpeed = 100
-		sequenceLength = 5
+		sequenceLength = 2.5999999
 		controllerEnabled = True
 		priorityField = 3
-		windowPosition = (0, 0)
-		windowSize = (0, 0)
+		windowPosition = (-531, 119)
+		windowSize = (600, 300)
 		stagingEnabled = True
 		sequenceIsPlaying = False
 		sequenceDirection = Forward
@@ -188,7 +190,7 @@ PART
 			}
 			PlaySequenceAction
 			{
-				actionGroup = None
+				actionGroup = Custom01
 				wasActiveBeforePartWasAdjusted = False
 			}
 			StopSequenceAction
@@ -264,9 +266,277 @@ PART
 		}
 		CONTROLLEDAXES
 		{
+			AXIS
+			{
+				persistentId = 3053901909
+				moduleId = 3420540002
+				partNickName = Forward Movable Rocker Arm - Left
+				rowIndex = 0
+				axisName = targetAngle
+				timeValueCurve
+				{
+					key = 0 48.11 0 -125.086
+					key = 0.3846154 0 -125.086 0
+					key = 0.7692308 0 0 0
+					key = 0.9615385 0 0 0
+					key = 1 0 0 0
+				}
+			}
+			AXIS
+			{
+				persistentId = 3053901909
+				moduleId = 3420540002
+				partNickName = Forward Movable Rocker Arm - Left
+				rowIndex = 1
+				axisName = servoMotorLimit
+				timeValueCurve
+				{
+					key = 0 100 0 0
+					key = 0.3846154 100 0 0
+					key = 0.7692308 100 0 0
+					key = 0.9615385 100 0 0
+					key = 1 100 0 0
+				}
+			}
+			AXIS
+			{
+				persistentId = 1455949653
+				moduleId = 1209638317
+				partNickName = Movable Rocker Bogie Conncetion Arm - Right
+				rowIndex = 2
+				axisName = targetAngle
+				timeValueCurve
+				{
+					key = 0 -50.55 0 131.43
+					key = 0.3846154 0 131.43 0
+					key = 0.7692308 0 0 0
+					key = 0.9615385 0 0 0
+					key = 1 0 0 0
+				}
+			}
+			AXIS
+			{
+				persistentId = 1455949653
+				moduleId = 1209638317
+				partNickName = Movable Rocker Bogie Conncetion Arm - Right
+				rowIndex = 3
+				axisName = servoMotorLimit
+				timeValueCurve
+				{
+					key = 0 100 0 0
+					key = 0.3846154 100 0 0
+					key = 0.7692308 100 0 0
+					key = 0.9615385 100 0 0
+					key = 1 100 0 0
+				}
+			}
+			AXIS
+			{
+				persistentId = 1779515747
+				moduleId = 1070907247
+				partNickName = Forward Movable Rocker Arm - Right
+				rowIndex = 4
+				axisName = targetAngle
+				timeValueCurve
+				{
+					key = 0 48.11 0 -48.11
+					key = 0.3846154 0 -60.1375 0
+					key = 0.7692308 0 0 0
+					key = 0.9615385 0 0 0
+					key = 1 0 0 0
+				}
+			}
+			AXIS
+			{
+				persistentId = 1779515747
+				moduleId = 1070907247
+				partNickName = Forward Movable Rocker Arm - Right
+				rowIndex = 5
+				axisName = servoMotorLimit
+				timeValueCurve
+				{
+					key = 0 100 0 0
+					key = 0.3846154 100 0 0
+					key = 0.7692308 100 0 0
+					key = 0.9615385 100 0 0
+					key = 1 100 0 0
+				}
+			}
+			AXIS
+			{
+				persistentId = 4211403925
+				moduleId = 2930367010
+				partNickName = Movable Rocker Bogie Conncetion Arm - Left
+				rowIndex = 6
+				axisName = targetAngle
+				timeValueCurve
+				{
+					key = 0 -50.55 0 50.55
+					key = 0.3846154 0 63.1875 0
+					key = 0.7692308 0 0 0
+					key = 0.9615385 0 0 0
+					key = 1 0 0 0
+				}
+			}
+			AXIS
+			{
+				persistentId = 4211403925
+				moduleId = 2930367010
+				partNickName = Movable Rocker Bogie Conncetion Arm - Left
+				rowIndex = 7
+				axisName = servoMotorLimit
+				timeValueCurve
+				{
+					key = 0 100 0 0
+					key = 0.3846154 100 0 0
+					key = 0.7692308 100 0 0
+					key = 0.9615385 100 0 0
+					key = 1 100 0 0
+				}
+			}
+			AXIS
+			{
+				persistentId = 546275156
+				moduleId = 826287729
+				partNickName = Bogie Servo Joint - Left
+				rowIndex = 8
+				axisName = targetAngle
+				timeValueCurve
+				{
+					key = 0 42.6 0 0
+					key = 0.3846154 42.6 0 0
+					key = 0.7692308 42.6 0 -221.52
+					key = 0.9615385 0 -221.52 0
+					key = 1 0 0 0
+				}
+			}
+			AXIS
+			{
+				persistentId = 546275156
+				moduleId = 826287729
+				partNickName = Bogie Servo Joint - Left
+				rowIndex = 9
+				axisName = servoMotorLimit
+				timeValueCurve
+				{
+					key = 0 100 0 0
+					key = 0.3846154 100 0 0
+					key = 0.7692308 100 0 0
+					key = 0.9615385 100 0 -2600.002
+					key = 1 0 -2600.002 0
+				}
+			}
+			AXIS
+			{
+				persistentId = 431615533
+				moduleId = 2347725021
+				partNickName = Bogie Servo Joint - Right
+				rowIndex = 10
+				axisName = targetAngle
+				timeValueCurve
+				{
+					key = 0 42.6 0 0
+					key = 0.3846154 42.6 0 0
+					key = 0.7692308 42.6 0 -221.52
+					key = 0.9615385 0 -221.52 0
+					key = 1 0 0 0
+				}
+			}
+			AXIS
+			{
+				persistentId = 431615533
+				moduleId = 2347725021
+				partNickName = Bogie Servo Joint - Right
+				rowIndex = 11
+				axisName = servoMotorLimit
+				timeValueCurve
+				{
+					key = 0 100 0 0
+					key = 0.3846154 100 0 0
+					key = 0.7692308 100 0 0
+					key = 0.9615385 100 0 -2600.002
+					key = 1 0 -2600.002 0
+				}
+			}
+			AXIS
+			{
+				persistentId = 95345363
+				moduleId = 2538787125
+				partNickName = Rocker Servo Joint
+				rowIndex = 12
+				axisName = servoMotorLimit
+				timeValueCurve
+				{
+					key = 0 100 0 -247
+					key = 0.3846154 5 -247 -4.875
+					key = 1 2 -4.875 0
+				}
+			}
+			AXIS
+			{
+				persistentId = 637562112
+				moduleId = 4161674986
+				partNickName = Rocker Servo Joint
+				rowIndex = 13
+				axisName = servoMotorLimit
+				timeValueCurve
+				{
+					key = 0 100 0 -247
+					key = 0.3846154 5 -247 -4.875
+					key = 1 2 -4.875 0
+				}
+			}
 		}
 		CONTROLLEDACTIONS
 		{
+			ACTION
+			{
+				persistentId = 1779515747
+				moduleId = 1070907247
+				partNickName = Forward Movable Rocker Arm - Right
+				rowIndex = 14
+				actionName = ToggleServoLockedAction
+				TIMES
+				{
+					time = 0.996153831
+				}
+			}
+			ACTION
+			{
+				persistentId = 4211403925
+				moduleId = 2930367010
+				partNickName = Movable Rocker Bogie Conncetion Arm - Left
+				rowIndex = 15
+				actionName = ToggleServoLockedAction
+				TIMES
+				{
+					time = 0.996153831
+				}
+			}
+			ACTION
+			{
+				persistentId = 3053901909
+				moduleId = 3420540002
+				partNickName = Forward Movable Rocker Arm - Left
+				rowIndex = 16
+				actionName = ToggleServoLockedAction
+				TIMES
+				{
+					time = 0.996153831
+				}
+			}
+			ACTION
+			{
+				persistentId = 1455949653
+				moduleId = 1209638317
+				partNickName = Movable Rocker Bogie Conncetion Arm - Right
+				rowIndex = 17
+				actionName = ToggleServoLockedAction
+				TIMES
+				{
+					time = 0.996153831
+				}
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -460,7 +730,7 @@ PART
 {
 	part = BKI.RoboticArm-curiosity_4293413058
 	partName = Part
-	persistentId = 3764002959
+	persistentId = 3469555005
 	pos = 0.259096116,15.0653458,-0.500339925
 	attPos = 0,0,0
 	attPos0 = 0.259095758,0.0653438568,-0.500343502
@@ -546,7 +816,7 @@ PART
 		aniState = LOCKED
 		animSwitch = True
 		animTime = 0
-		animSpeed = 1
+		animSpeed = -1591.25
 		deployPercent = 100
 		animationIsDisabled = False
 		stagingEnabled = True
@@ -615,7 +885,7 @@ PART
 {
 	part = Rocker.BKI_4293411008
 	partName = Part
-	persistentId = 925299778
+	persistentId = 95345363
 	pos = 0.374784708,14.9931269,-0.0993714184
 	attPos = 0,0,0
 	attPos0 = 0.37478435,-0.00687503815,-0.0993749946
@@ -640,8 +910,8 @@ PART
 	link = RockerBogieArm.L.BKI_4293402900
 	link = RockerArm.R.BKI_4293402422
 	attN = bottom,CommonRoverBody_4293414266_0|0|0_-0.625|0|0_0|0|0_-0.625|0|0
-	attN = N1,RockerBogieArm.L.BKI_4293402900_0.0872077942|-4.43833414E-09|8.14907253E-09_0.98078531|0.195090324|1.39698386E-08_0.0872077942|0|0_0.98078531|0.195090324|1.67638063E-08
-	attN = N2,RockerArm.R.BKI_4293402422_0.0872077942|-4.43833414E-09|8.14907253E-09_0.98078531|0.195090324|1.39698386E-08_0.0872077942|0|0_0.98078531|0.195090324|1.67638063E-08
+	attN = N1,RockerBogieArm.L.BKI_4293402900_0.0872077942|-4.43833414E-09|8.14907253E-09_0.98078531|0.195090324|1.39698386E-08_0.0872077942|0|7.4505806E-09_0.98078531|0.195090324|1.67638063E-08
+	attN = N2,RockerArm.R.BKI_4293402422_0.0872077942|-4.43833414E-09|8.14907253E-09_0.98078531|0.195090324|1.39698386E-08_0.0872077942|0|7.4505806E-09_0.98078531|0.195090324|1.67638063E-08
 	EVENTS
 	{
 	}
@@ -702,6 +972,7 @@ PART
 	{
 		name = ModuleRoboticServoHinge
 		isEnabled = True
+		persistentId = 2538787125
 		softMinMaxAngles = (-15, 15)
 		targetAngle = 0
 		mirrorRotation = False
@@ -929,7 +1200,7 @@ PART
 {
 	part = Rocker.BKI_4293409294
 	partName = Part
-	persistentId = 2072799394
+	persistentId = 637562112
 	pos = -0.374783993,14.9931269,-0.0993714184
 	attPos = 0,0,0
 	attPos0 = -0.37478435,-0.00687503815,-0.0993749946
@@ -954,8 +1225,8 @@ PART
 	link = RockerBogieArm.R.BKI_4293403428
 	link = RockerArm.L.BKI_4293401316
 	attN = bottom,CommonRoverBody_4293414266_0|0|0_-0.625|0|0_0|0|0_-0.625|0|0
-	attN = N1,RockerBogieArm.R.BKI_4293403428_0.0872077942|-4.43833414E-09|8.14907253E-09_0.98078531|0.195090324|1.39698386E-08_0.0872077942|0|0_0.98078531|0.195090324|1.02445483E-07
-	attN = N2,RockerArm.L.BKI_4293401316_0.0872077942|-4.43833414E-09|8.14907253E-09_0.98078531|0.195090324|1.39698386E-08_0.0872077942|0|0_0.98078531|0.195090324|1.02445483E-07
+	attN = N1,RockerBogieArm.R.BKI_4293403428_0.0872077942|-4.43833414E-09|8.14907253E-09_0.98078531|0.195090324|1.39698386E-08_0.0872077942|0|7.4505806E-09_0.98078531|0.195090324|-1.67638063E-08
+	attN = N2,RockerArm.L.BKI_4293401316_0.0872077942|-4.43833414E-09|8.14907253E-09_0.98078531|0.195090324|1.39698386E-08_0.0872077942|0|7.4505806E-09_0.98078531|0.195090324|-1.67638063E-08
 	EVENTS
 	{
 	}
@@ -1016,6 +1287,7 @@ PART
 	{
 		name = ModuleRoboticServoHinge
 		isEnabled = True
+		persistentId = 4161674986
 		softMinMaxAngles = (-15, 15)
 		targetAngle = 0
 		mirrorRotation = False
@@ -1227,7 +1499,7 @@ PART
 {
 	part = RockerBogieArm.R.BKI_4293403428
 	partName = Part
-	persistentId = 631701080
+	persistentId = 1455949653
 	pos = -0.499840915,15.0006552,-0.0993714258
 	attPos = 0,0,0
 	attPos0 = 0.125056922,0.00752830505,7.4505806E-09
@@ -1251,7 +1523,7 @@ PART
 	modSize = 0,0,0
 	link = Rocker-Bogie-bogie-R.BKI_4293400838
 	attN = bottom,Rocker.BKI_4293409294_0.0385906249|0|0_0.625|0|0_0.0385906249|0|0_0.625|0|0
-	attN = N1,Rocker-Bogie-bogie-R.BKI_4293400838_0.01211752|-0.153486267|0.471252322_-0.978147626|-0.207911849|-3.27825546E-07_0.012117479|0.266365618|0.417954922_-0.978147507|-0.132108286|0.160544857
+	attN = N1,Rocker-Bogie-bogie-R.BKI_4293400838_0.01211752|-0.153486267|0.471252322_-0.978147626|-0.207911849|-3.27825546E-07_0.012117424|0.266365618|0.417954624_-0.978147626|-0.132108316|0.160544917
 	EVENTS
 	{
 	}
@@ -1312,13 +1584,14 @@ PART
 	{
 		name = ModuleRoboticServoHinge
 		isEnabled = True
+		persistentId = 1209638317
 		softMinMaxAngles = (-50.5499992, 0)
 		targetAngle = -50.5499992
 		mirrorRotation = False
 		traverseVelocity = 90
 		hingeDamping = 100
 		previousTargetAngle = -50.5499992
-		servoIsLocked = False
+		servoIsLocked = True
 		servoIsMotorized = True
 		jointParentRotation = 3.55271368E-15,-6.93889285E-16,2.46518995E-30,1
 		servoMotorIsEngaged = True
@@ -1352,7 +1625,7 @@ PART
 			}
 			ToggleServoLockedAction
 			{
-				actionGroup = None
+				actionGroup = Custom01
 				wasActiveBeforePartWasAdjusted = False
 			}
 			ServoEngageLockAction
@@ -1492,7 +1765,7 @@ PART
 {
 	part = RockerBogieArm.L.BKI_4293402900
 	partName = Part
-	persistentId = 4281552416
+	persistentId = 4211403925
 	pos = 0.49984163,15.0006552,-0.0993714184
 	attPos = 0,0,0
 	attPos0 = 0.125056922,0.00752830505,0
@@ -1511,12 +1784,12 @@ PART
 	sepI = -1
 	attm = 0
 	sameVesselCollision = False
-	modCost = 50
-	modMass = 0.00999999978
+	modCost = 6.5
+	modMass = 0.0013
 	modSize = 0,0,0
 	link = Rocker-Bogie-bogie-L.BKI_4293400248
 	attN = bottom,Rocker.BKI_4293411008_-0.0385906249|0|0_-0.625|0|0_-0.0385906249|0|0_-0.625|0|0
-	attN = N1,Rocker-Bogie-bogie-L.BKI_4293400248_-0.0121175079|-0.153486267|0.471252322_0.978147626|-0.207910985|-9.83476639E-07_-0.0121175721|0.266365647|0.417954743_0.978147864|-0.132108495|0.160543919
+	attN = N1,Rocker-Bogie-bogie-L.BKI_4293400248_-0.0121175079|-0.153486267|0.471252322_0.978147626|-0.207910985|-9.83476639E-07_-0.0121174566|0.266365618|0.417954624_0.978147626|-0.132108331|0.160544246
 	EVENTS
 	{
 	}
@@ -1577,18 +1850,19 @@ PART
 	{
 		name = ModuleRoboticServoHinge
 		isEnabled = True
+		persistentId = 2930367010
 		softMinMaxAngles = (-50.5499992, 0)
 		targetAngle = -50.5499992
 		mirrorRotation = False
 		traverseVelocity = 90
 		hingeDamping = 100
 		previousTargetAngle = -50.5499992
-		servoIsLocked = False
+		servoIsLocked = True
 		servoIsMotorized = True
 		jointParentRotation = 3.55271368E-15,-6.93889285E-16,2.46518995E-30,1
 		servoMotorIsEngaged = True
 		launchPosition = -50.5499992
-		servoMotorSize = 100
+		servoMotorSize = 13
 		servoMotorLimit = 100
 		lockPartOnPowerLoss = True
 		servoTransformPosition = 0,0,0
@@ -1617,7 +1891,7 @@ PART
 			}
 			ToggleServoLockedAction
 			{
-				actionGroup = None
+				actionGroup = Custom01
 				wasActiveBeforePartWasAdjusted = False
 			}
 			ServoEngageLockAction
@@ -1757,7 +2031,7 @@ PART
 {
 	part = RockerArm.R.BKI_4293402422
 	partName = Part
-	persistentId = 198941688
+	persistentId = 1779515747
 	pos = 0.496107876,14.9999132,-0.0993714184
 	attPos = 0,0,0
 	attPos0 = 0.121323168,0.00678634644,0
@@ -1781,7 +2055,7 @@ PART
 	modSize = 0,0,0
 	link = BKI.roverWheel-curiosity_4293389776
 	attN = bottom,Rocker.BKI_4293411008_-0.0347837508|0|0_-0.625|0|0_-0.0347837508|0|0_-0.625|0|0
-	attN = N1,BKI.roverWheel-curiosity_4293389776_0.133911163|-0.177744046|-0.550616026_-0.207911566|-0.978147626|-1.8440187E-07_0.133911178|0.290253878|-0.500523508_-0.207911775|-0.654508293|-0.726905406
+	attN = N1,BKI.roverWheel-curiosity_4293389776_0.133911163|-0.177744046|-0.550616026_-0.207911566|-0.978147626|-1.8440187E-07_0.133911133|0.291213602|-0.49996537_-0.207911849|-0.653111458|-0.728160679
 	EVENTS
 	{
 	}
@@ -1842,22 +2116,23 @@ PART
 	{
 		name = ModuleRoboticServoHinge
 		isEnabled = True
+		persistentId = 1070907247
 		softMinMaxAngles = (0, 48.1100006)
-		targetAngle = 48
+		targetAngle = 48.1100006
 		mirrorRotation = False
 		traverseVelocity = 90
 		hingeDamping = 100
-		previousTargetAngle = 48
-		servoIsLocked = False
+		previousTargetAngle = 48.1100006
+		servoIsLocked = True
 		servoIsMotorized = True
 		jointParentRotation = 3.55271368E-15,-6.93889285E-16,2.46518995E-30,1
 		servoMotorIsEngaged = True
-		launchPosition = 48
+		launchPosition = 48.1100006
 		servoMotorSize = 100
 		servoMotorLimit = 100
 		lockPartOnPowerLoss = True
 		servoTransformPosition = 0,0,0
-		servoTransformRotation = 0.406736672,0,0,0.91354543
+		servoTransformRotation = 0.407613397,0,0,0.913154602
 		useMultipleDragCubes = False
 		stagingEnabled = True
 		EVENTS
@@ -1882,7 +2157,7 @@ PART
 			}
 			ToggleServoLockedAction
 			{
-				actionGroup = None
+				actionGroup = Custom01
 				wasActiveBeforePartWasAdjusted = False
 			}
 			ServoEngageLockAction
@@ -2022,7 +2297,7 @@ PART
 {
 	part = RockerArm.L.BKI_4293401316
 	partName = Part
-	persistentId = 1663881241
+	persistentId = 3053901909
 	pos = -0.496107161,14.9999132,-0.0993714184
 	attPos = 0,0,0
 	attPos0 = 0.121323168,0.00678634644,0
@@ -2046,7 +2321,7 @@ PART
 	modSize = 0,0,0
 	link = BKI.roverWheel-curiosity-R_4293379366
 	attN = bottom,Rocker.BKI_4293409294_0.0347837508|0|0_0.625|0|0_0.0347837508|0|0_0.625|0|0
-	attN = N1,BKI.roverWheel-curiosity-R_4293379366_-0.133911133|-0.177744046|-0.550616026_0.207911834|-0.978147626|-2.32830644E-08_-0.133911237|0.290253878|-0.500523508_0.207911789|-0.654508471|-0.726905346
+	attN = N1,BKI.roverWheel-curiosity-R_4293379366_-0.133911133|-0.177744046|-0.550616026_0.207911834|-0.978147626|-2.32830644E-08_-0.133911133|0.291213602|-0.49996537_0.207911715|-0.653111815|-0.728160739
 	EVENTS
 	{
 	}
@@ -2107,22 +2382,23 @@ PART
 	{
 		name = ModuleRoboticServoHinge
 		isEnabled = True
+		persistentId = 3420540002
 		softMinMaxAngles = (0, 48.1100006)
-		targetAngle = 48
+		targetAngle = 48.1100006
 		mirrorRotation = False
 		traverseVelocity = 90
 		hingeDamping = 100
-		previousTargetAngle = 48
-		servoIsLocked = False
+		previousTargetAngle = 48.1100006
+		servoIsLocked = True
 		servoIsMotorized = True
 		jointParentRotation = 3.55271368E-15,-6.93889285E-16,2.46518995E-30,1
 		servoMotorIsEngaged = True
-		launchPosition = 48
+		launchPosition = 48.1100006
 		servoMotorSize = 100
 		servoMotorLimit = 100
 		lockPartOnPowerLoss = True
 		servoTransformPosition = 0,0,0
-		servoTransformRotation = 0.406736672,0,0,0.91354543
+		servoTransformRotation = 0.407613397,0,0,0.913154602
 		useMultipleDragCubes = False
 		stagingEnabled = True
 		EVENTS
@@ -2147,7 +2423,7 @@ PART
 			}
 			ToggleServoLockedAction
 			{
-				actionGroup = None
+				actionGroup = Custom01
 				wasActiveBeforePartWasAdjusted = False
 			}
 			ServoEngageLockAction
@@ -2287,11 +2563,11 @@ PART
 {
 	part = Rocker-Bogie-bogie-R.BKI_4293400838
 	partName = Part
-	persistentId = 3478243747
-	pos = -0.474060625,15.2619066,0.32478708
+	persistentId = 431615533
+	pos = -0.474060625,15.2619066,0.32478714
 	attPos = 0,0,0
 	attPos0 = -0.0256825909,-0.161520138,0.471252441
-	rot = -0.418205231,0.0860351771,0.00591843575,0.904249549
+	rot = -0.418205649,0.0860352665,0.00591856241,0.90424937
 	attRot = 0,0,0,1
 	attRot0 = 2.27181847E-08,-1.75771802E-07,0.104528464,0.994521916
 	mir = 1,1,1
@@ -2312,8 +2588,8 @@ PART
 	link = Rocker-Bogie-Bogie-Arm-FWD-L.BKI_4293399280
 	link = Rocker-Bogie-Bogie-Arm-B-L.BKI_4293398324
 	attN = bottom,RockerBogieArm.R.BKI_4293403428_0.0386443771|0|0_0.625|0|0_0.0386443771|0|0_0.625|0|0
-	attN = N1,Rocker-Bogie-Bogie-Arm-FWD-L.BKI_4293399280_0|0|0_-1.00000012|0|-1.1920929E-07_-3.50640548E-08|1.59793743E-07|2.23517418E-07_-0.99999994|6.37955964E-08|-1.82074615E-07
-	attN = N2,Rocker-Bogie-Bogie-Arm-B-L.BKI_4293398324_0|0|0_-1.00000012|0|-1.1920929E-07_-3.50640548E-08|1.59793743E-07|2.23517418E-07_-0.99999994|6.37955964E-08|-1.82074615E-07
+	attN = N1,Rocker-Bogie-Bogie-Arm-FWD-L.BKI_4293399280_0|0|0_-1.00000012|0|-1.1920929E-07_0|0|0_-0.99999994|1.81142241E-07|-2.30786227E-07
+	attN = N2,Rocker-Bogie-Bogie-Arm-B-L.BKI_4293398324_0|0|0_-1.00000012|0|-1.1920929E-07_0|0|0_-0.99999994|1.81142241E-07|-2.30786227E-07
 	EVENTS
 	{
 	}
@@ -2374,13 +2650,14 @@ PART
 	{
 		name = ModuleRoboticServoHinge
 		isEnabled = True
+		persistentId = 2347725021
 		softMinMaxAngles = (-15, 42.5999985)
 		targetAngle = 42.5999985
 		mirrorRotation = False
 		traverseVelocity = 90
 		hingeDamping = 100
 		previousTargetAngle = 42.5999985
-		servoIsLocked = False
+		servoIsLocked = True
 		servoIsMotorized = True
 		jointParentRotation = 0,0,0,1
 		servoMotorIsEngaged = True
@@ -2414,7 +2691,7 @@ PART
 			}
 			ToggleServoLockedAction
 			{
-				actionGroup = None
+				actionGroup = Custom01
 				wasActiveBeforePartWasAdjusted = False
 			}
 			ServoEngageLockAction
@@ -2554,11 +2831,11 @@ PART
 {
 	part = Rocker-Bogie-bogie-L.BKI_4293400248
 	partName = Part
-	persistentId = 3336763701
+	persistentId = 546275156
 	pos = 0.474061131,15.2619057,0.324786842
 	attPos = 0,0,0
 	attPos0 = 0.0256824121,-0.161520094,0.471252143
-	rot = -0.418205261,-0.0860347375,-0.00591836125,0.904249549
+	rot = -0.41820538,-0.0860347375,-0.0059183538,0.904249609
 	attRot = 0,0,0,1
 	attRot0 = 5.71643213E-08,5.89380988E-07,-0.104528174,0.994521976
 	mir = 1,1,1
@@ -2579,8 +2856,8 @@ PART
 	link = Rocker-Bogie-Bogie-Arm-FWD-R.BKI_4293399746
 	link = Rocker-Bogie-Bogie-Arm-Back-R.BKI_4293398780
 	attN = bottom,RockerBogieArm.L.BKI_4293402900_-0.0386443771|0|0_-0.625|0|0_-0.0386443771|0|0_-0.625|0|0
-	attN = N1,Rocker-Bogie-Bogie-Arm-FWD-R.BKI_4293399746_0|0|0_1.00000012|0|-1.1920929E-07_-4.30297327E-08|-2.56699707E-07|-3.35276155E-07_0.999999881|8.24220479E-08|-7.83811416E-09
-	attN = N2,Rocker-Bogie-Bogie-Arm-Back-R.BKI_4293398780_0|0|0_1.00000012|0|-1.1920929E-07_-4.30297327E-08|-2.56699707E-07|-3.35276155E-07_0.999999881|8.24220479E-08|-7.83811416E-09
+	attN = N1,Rocker-Bogie-Bogie-Arm-FWD-R.BKI_4293399746_0|0|0_1.00000012|0|-1.1920929E-07_0|0|0_1.00000012|6.93835318E-08|-1.09658856E-07
+	attN = N2,Rocker-Bogie-Bogie-Arm-Back-R.BKI_4293398780_0|0|0_1.00000012|0|-1.1920929E-07_0|0|0_1.00000012|6.93835318E-08|-1.09658856E-07
 	EVENTS
 	{
 	}
@@ -2641,13 +2918,14 @@ PART
 	{
 		name = ModuleRoboticServoHinge
 		isEnabled = True
+		persistentId = 826287729
 		softMinMaxAngles = (-15, 42.5999985)
 		targetAngle = 42.5999985
 		mirrorRotation = False
 		traverseVelocity = 90
 		hingeDamping = 100
 		previousTargetAngle = 42.5999985
-		servoIsLocked = False
+		servoIsLocked = True
 		servoIsMotorized = True
 		jointParentRotation = 0,0,0,1
 		servoMotorIsEngaged = True
@@ -2681,7 +2959,7 @@ PART
 			}
 			ToggleServoLockedAction
 			{
-				actionGroup = None
+				actionGroup = Custom01
 				wasActiveBeforePartWasAdjusted = False
 			}
 			ServoEngageLockAction
@@ -2821,11 +3099,11 @@ PART
 {
 	part = Rocker-Bogie-Bogie-Arm-FWD-R.BKI_4293399746
 	partName = Part
-	persistentId = 2372685588
+	persistentId = 3542037127
 	pos = 0.474061161,15.2619057,0.324786544
 	attPos = 0,0,0
 	attPos0 = 0,0,0
-	rot = -0.0611684658,-0.0823075175,0.0257381424,0.994394958
+	rot = -0.0611684062,-0.082307525,0.025738135,0.994395018
 	attRot = 0,0,0,1
 	attRot0 = -9.78868431E-10,1.49562695E-07,1.49011168E-08,1
 	mir = 1,1,1
@@ -2957,11 +3235,11 @@ PART
 {
 	part = Rocker-Bogie-Bogie-Arm-FWD-L.BKI_4293399280
 	partName = Part
-	persistentId = 3217837121
-	pos = -0.474060595,15.2619066,0.324787319
+	persistentId = 2037557413
+	pos = -0.474060595,15.2619066,0.324787438
 	attPos = 0,0,0
 	attPos0 = 0,0,0
-	rot = -0.0611684397,0.0823080316,-0.0257382169,0.994394958
+	rot = -0.0611686334,0.0823082253,-0.0257381275,0.994395018
 	attRot = 0,0,0,1
 	attRot0 = -5.86529936E-10,-8.96143462E-08,-7.45057438E-09,1
 	mir = 1,1,1
@@ -3093,11 +3371,11 @@ PART
 {
 	part = Rocker-Bogie-Bogie-Arm-Back-R.BKI_4293398780
 	partName = Part
-	persistentId = 3610858420
+	persistentId = 667834033
 	pos = 0.474061161,15.2619057,0.324786544
 	attPos = 0,0,0
 	attPos0 = 0,0,0
-	rot = -0.0611684658,-0.0823075175,0.0257381424,0.994394958
+	rot = -0.0611684062,-0.082307525,0.025738135,0.994395018
 	attRot = 0,0,0,1
 	attRot0 = -9.78868431E-10,1.49562695E-07,1.49011168E-08,1
 	mir = 1,1,1
@@ -3229,11 +3507,11 @@ PART
 {
 	part = Rocker-Bogie-Bogie-Arm-B-L.BKI_4293398324
 	partName = Part
-	persistentId = 738219125
-	pos = -0.474060595,15.2619066,0.324787319
+	persistentId = 4156563712
+	pos = -0.474060595,15.2619066,0.324787438
 	attPos = 0,0,0
 	attPos0 = 0,0,0
-	rot = -0.0611684397,0.0823080316,-0.0257382169,0.994394958
+	rot = -0.0611686334,0.0823082253,-0.0257381275,0.994395018
 	attRot = 0,0,0,1
 	attRot0 = -5.86529936E-10,-8.96143462E-08,-7.45057438E-09,1
 	mir = 1,1,1
@@ -3363,9 +3641,9 @@ PART
 }
 PART
 {
-	part = TenacityRoverRT.BKI_4293397700
+	part = TenacityRoverRT.BKI_4293414302
 	partName = Part
-	persistentId = 2565645633
+	persistentId = 2202281550
 	pos = 3.57665328E-07,15.1953688,0.768931866
 	attPos = 0,0,0
 	attPos0 = 3.7459813E-11,0.195366859,0.768928289
@@ -3553,11 +3831,11 @@ PART
 {
 	part = BKI.roverWheel-curiosity_4293389776
 	partName = Part
-	persistentId = 2632570405
-	pos = 0.551449656,15.1372843,-0.784610391
+	persistentId = 1682718409
+	pos = 0.551193058,15.1385746,-0.784371316
 	attPos = 0,0,0
 	attPos0 = 0.0810782388,-0.426303029,-0.550616086
-	rot = 0.398393512,0.0819596276,-0.00597915798,0.913525879
+	rot = 0.399252146,0.0821362957,-0.00597658008,0.913135052
 	attRot = 0,0,0,1
 	attRot0 = 7.40935135E-08,1.11927623E-09,-0.104528524,0.994521916
 	mir = 1,1,1
@@ -3915,11 +4193,11 @@ PART
 {
 	part = BKI.roverWheel-curiosity-R_4293379366
 	partName = Part
-	persistentId = 2732566114
-	pos = -0.551448882,15.1372843,-0.784610391
+	persistentId = 3209622245
+	pos = -0.551192284,15.1385746,-0.784371316
 	attPos = 0,0,0
 	attPos0 = -0.0810782611,-0.426303029,-0.550616086
-	rot = -0.00597921014,0.913525879,0.398393542,0.081959635
+	rot = -0.00597669184,0.913135231,0.399251997,0.0821363032
 	attRot = 0,0.99999994,0,0
 	attRot0 = -0.104528539,0.994521916,1.04144945E-07,-6.16936902E-08
 	mir = 1,1,1
@@ -4277,11 +4555,11 @@ PART
 {
 	part = BKI.roverWheel-curiosity-R_4293378290
 	partName = Part
-	persistentId = 4140733360
-	pos = 0.520124078,15.0678492,0.754344046
+	persistentId = 1897701745
+	pos = 0.520124078,15.0678492,0.754344821
 	attPos = 0,0,0
 	attPos0 = 0.102453135,-0.248317868,0.390052646
-	rot = -0.061168395,-0.0823082626,0.025738202,0.994394958
+	rot = -0.0611683913,-0.0823082775,0.025738202,0.994394958
 	attRot = 0,0,0,1
 	attRot0 = 5.96046377E-08,-7.32961155E-07,5.0943272E-14,1
 	mir = 1,1,1
@@ -4408,7 +4686,7 @@ PART
 		autoSteeringAdjust = False
 		steeringEnabled = True
 		steeringInvert = False
-		angleTweakable = 40
+		angleTweakable = 40.0499992
 		responseTweakable = 1.5
 		stagingEnabled = True
 		EVENTS
@@ -4639,11 +4917,11 @@ PART
 {
 	part = BKI.roverWheel-curiosity_4293377684
 	partName = Part
-	persistentId = 2956799932
-	pos = -0.520123005,15.0678501,0.754344821
+	persistentId = 902698369
+	pos = -0.520122886,15.0678501,0.754345655
 	attPos = 0,0,0
 	attPos0 = -0.102453083,-0.248317808,0.390052766
-	rot = 0.0257382467,0.994394958,-0.0611684695,-0.0823083371
+	rot = 0.0257381275,0.994394898,-0.0611687005,-0.0823084265
 	attRot = 0,0.99999994,0,0
 	attRot0 = 7.45058593E-09,1,-2.98023206E-08,-3.18158925E-07
 	mir = 1,1,1
@@ -5001,11 +5279,11 @@ PART
 {
 	part = BKI.roverWheel-curiosity-nosteer-R_4293373684
 	partName = Part
-	persistentId = 1161979158
-	pos = -0.726612806,14.992384,0.113225535
+	persistentId = 4163972534
+	pos = -0.726612926,14.992384,0.113225803
 	attPos = 0,0,0
 	attPos0 = -0.198320478,-0.250899762,-0.28089419
-	rot = 0.0322459266,0.994205236,-0.0617057867,-0.0819062442
+	rot = 0.0322457924,0.994205236,-0.0617059581,-0.0819063261
 	attRot = 0,0.99999994,0,0
 	attRot0 = 0.00654493272,0.999978602,-4.88498131E-15,-3.17957074E-07
 	mir = 1,1,1
@@ -5273,11 +5551,11 @@ PART
 {
 	part = BKI.roverWheel-curiosity-nosteer_4293373078
 	partName = Part
-	persistentId = 1154071265
-	pos = 0.726613164,14.992383,0.11322479
+	persistentId = 94664338
+	pos = 0.726613164,14.992383,0.113224432
 	attPos = 0,0,0
 	attPos0 = 0.198320478,-0.250899881,-0.280894041
-	rot = -0.0617057681,-0.0819061622,0.0322455838,0.994205296
+	rot = -0.0617060401,-0.0819061697,0.0322455689,0.994205296
 	attRot = 0,0,0,1
 	attRot0 = 9.99200722E-16,-7.33335696E-07,0.00654462725,0.999978662
 	mir = 1,1,1
@@ -5545,7 +5823,7 @@ PART
 {
 	part = TenacityRoverMast.BKI_4293372482
 	partName = Part
-	persistentId = 2784835953
+	persistentId = 2369357903
 	pos = -0.352136493,15.213129,-0.415863901
 	attPos = 0,0,0
 	attPos0 = -0.35213685,0.213127136,-0.415867478
@@ -5554,7 +5832,7 @@ PART
 	attRot0 = 1.86493835E-07,-0.284015417,1.48211979E-14,0.958819747
 	mir = 1,1,1
 	symMethod = Radial
-	autostrutMode = Off
+	autostrutMode = Heaviest
 	rigidAttachment = False
 	istg = -1
 	resPri = 0
@@ -5564,11 +5842,11 @@ PART
 	sepI = -1
 	attm = 0
 	sameVesselCollision = False
-	modCost = 50
-	modMass = 0.00999999978
+	modCost = 5
+	modMass = 0.000999999931
 	modSize = 0,0,0
 	link = TenacityRoverMastConnector.BKI_4293372022
-	attN = N1,TenacityRoverMastConnector.BKI_4293372022_-5.67779352E-07|0.07514292|0.0009786468_-5.16164818E-08|0.99999994|3.57627869E-07_0.0751428753|8.31019964E-09|0.000978661701_1.00000012|7.61319754E-08|1.49011612E-07
+	attN = N1,TenacityRoverMastConnector.BKI_4293372022_-5.67779352E-07|0.07514292|0.0009786468_-5.16164818E-08|0.99999994|3.57627869E-07_0.0751428753|9.61984483E-07|0.000978661701_1.00000024|-1.32749562E-08|2.4586916E-07
 	attN = N2,CommonRoverBody_4293414266_0|-0.0693412498|0_0.544638991|3.57627869E-07|0.838670552_-8.88585738E-09|-0.0693416595|-1.95813143E-10_0.544638991|3.57627897E-07|0.838670611
 	EVENTS
 	{
@@ -5633,10 +5911,10 @@ PART
 		softMinMaxAngles = (-90, 0)
 		targetAngle = -90
 		mirrorRotation = False
-		traverseVelocity = 90
+		traverseVelocity = 10
 		hingeDamping = 100
 		previousTargetAngle = -90
-		servoIsLocked = False
+		servoIsLocked = True
 		servoIsMotorized = True
 		jointParentRotation = 0,0,0,1
 		servoMotorIsEngaged = True
@@ -5670,7 +5948,7 @@ PART
 			}
 			ToggleServoLockedAction
 			{
-				actionGroup = None
+				actionGroup = Custom02
 				wasActiveBeforePartWasAdjusted = False
 			}
 			ServoEngageLockAction
@@ -5757,6 +6035,23 @@ PART
 	}
 	MODULE
 	{
+		name = ModuleB9PartSwitch
+		isEnabled = True
+		stagingEnabled = True
+		moduleID = meshSwitch
+		currentSubtype = Support On
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = ModuleCargoPart
 		isEnabled = True
 		packedVolume = 15
@@ -5792,6 +6087,21 @@ PART
 	}
 	MODULE
 	{
+		name = ModuleB9PartInfo
+		isEnabled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = ModuleIREditorHelper
 		isEnabled = True
 		stagingEnabled = True
@@ -5810,16 +6120,16 @@ PART
 {
 	part = TenacityRoverMastConnector.BKI_4293372022
 	partName = Part
-	persistentId = 550389995
-	pos = -0.210956827,15.213129,-0.323013872
+	persistentId = 576849542
+	pos = -0.210956514,15.213129,-0.323013663
 	attPos = 0,0,0
 	attPos0 = -5.05388016E-07,0.168972969,0.000978611177
-	rot = 0.385118067,2.38418579E-07,-0.593029678,0.707106888
+	rot = 0.385118186,1.78813934E-07,-0.593030095,0.707106411
 	attRot = 0,0,0,1
 	attRot0 = -1.86493835E-07,0.284015417,-1.48211979E-14,0.958819747
 	mir = 1,1,1
 	symMethod = Radial
-	autostrutMode = Off
+	autostrutMode = Root
 	rigidAttachment = False
 	istg = -1
 	resPri = 0
@@ -5946,11 +6256,11 @@ PART
 {
 	part = TenacityRoverHeadRotor1.BKI_4293371598
 	partName = Part
-	persistentId = 1143564052
-	pos = -0.0999923646,15.21313,-0.250952661
+	persistentId = 4203399687
+	pos = -0.0999918282,15.21313,-0.250952274
 	attPos = 0,0,0
 	attPos0 = -5.96989409E-08,0.132309914,2.98661895E-08
-	rot = 0.385118067,2.38418579E-07,-0.593029678,0.707106888
+	rot = 0.385118127,1.78813934E-07,-0.593030035,0.707106471
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
 	mir = 1,1,1
@@ -5965,13 +6275,13 @@ PART
 	sepI = -1
 	attm = 0
 	sameVesselCollision = False
-	modCost = 50
-	modMass = 0.00999999978
+	modCost = 5
+	modMass = 0.000999999931
 	modSize = 0,0,0
 	link = TenacityRoverHead.BKI_4293371130
 	attN = bottom,Null_0_0|-0.0381418765|0_0|-0.625|0_0|-0.0381418765|0_0|-0.625|0
-	attN = N1,TenacityRoverHead.BKI_4293371130_0|0.0836527944|0_-2.22044578E-16|1|5.96046448E-08_4.02944352E-07|0.0836525559|2.67606623E-07_9.78921406E-08|1.00000036|-4.07269226E-07
-	attN = N2,TenacityRoverMastConnector.BKI_4293372022_3.74584906E-25|-0.0224915799|0_2.22044605E-16|-1|5.96046448E-08_-4.00570798E-07|-0.0224914998|-2.46109749E-07_1.63609386E-07|-1.00000072|-1.42497612E-07
+	attN = N1,TenacityRoverHead.BKI_4293371130_0|0.0836527944|0_-2.22044578E-16|1|5.96046448E-08_-2.24060859E-08|0.0836529806|-1.40348561E-07_-1.57450103E-07|1.00000036|-3.45035176E-07
+	attN = N2,TenacityRoverMastConnector.BKI_4293372022_3.74584906E-25|-0.0224915799|0_2.22044605E-16|-1|5.96046448E-08_1.95635721E-08|-0.0224914942|8.39457392E-09_4.46521256E-08|-1.00000036|2.45131957E-07
 	EVENTS
 	{
 	}
@@ -6035,10 +6345,10 @@ PART
 		softMinMaxAngles = (-180, 180)
 		targetAngle = -123
 		mirrorRotation = False
-		traverseVelocity = 90
+		traverseVelocity = 10
 		hingeDamping = 100
 		previousTargetAngle = -123
-		servoIsLocked = False
+		servoIsLocked = True
 		servoIsMotorized = True
 		jointParentRotation = 0,0,0,1
 		servoMotorIsEngaged = True
@@ -6072,7 +6382,7 @@ PART
 			}
 			ToggleServoLockedAction
 			{
-				actionGroup = None
+				actionGroup = Custom02
 				wasActiveBeforePartWasAdjusted = False
 			}
 			ServoEngageLockAction
@@ -6212,16 +6522,16 @@ PART
 {
 	part = TenacityRoverHead.BKI_4293371130
 	partName = Part
-	persistentId = 1175284914
-	pos = 0.00215306878,15.21313,-0.18461819
+	persistentId = 3570786420
+	pos = 0.00215435028,15.21313,-0.184617326
 	attPos = 0,0,0
 	attPos0 = -1.98951966E-12,0.121794701,2.00124362E-11
-	rot = -0.337402195,-0.621417522,-0.621417642,0.337402433
+	rot = -0.337401688,-0.621417224,-0.621418118,0.337402642
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
 	mir = 1,1,1
 	symMethod = Radial
-	autostrutMode = Off
+	autostrutMode = Grandparent
 	rigidAttachment = False
 	istg = -1
 	resPri = 0
@@ -6231,8 +6541,8 @@ PART
 	sepI = -1
 	attm = 0
 	sameVesselCollision = False
-	modCost = 50
-	modMass = 0.00999999978
+	modCost = 5
+	modMass = 0.000999999931
 	modSize = 0,0,0
 	attN = bottom,TenacityRoverHeadRotor1.BKI_4293371598_0|-0.0381418765|0_0|-0.625|0_0|-0.0381418765|0_0|-0.625|0
 	EVENTS
@@ -6298,10 +6608,10 @@ PART
 		softMinMaxAngles = (-70, 70)
 		targetAngle = 0
 		mirrorRotation = False
-		traverseVelocity = 90
+		traverseVelocity = 10
 		hingeDamping = 100
 		previousTargetAngle = 0
-		servoIsLocked = False
+		servoIsLocked = True
 		servoIsMotorized = True
 		jointParentRotation = 0,0,0,1
 		servoMotorIsEngaged = True
@@ -6335,7 +6645,7 @@ PART
 			}
 			ToggleServoLockedAction
 			{
-				actionGroup = None
+				actionGroup = Custom02
 				wasActiveBeforePartWasAdjusted = False
 			}
 			ServoEngageLockAction
@@ -6465,6 +6775,199 @@ PART
 		name = ModuleCargoPart
 		isEnabled = True
 		packedVolume = 15
+		beingAttached = False
+		beingSettled = False
+		reinitResourcesOnStoreInVessel = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleIREditorHelper
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = BKIMSLHGAntenna_4293418556
+	partName = Part
+	persistentId = 2586474821
+	pos = 0.296870977,15.1438427,0.287499875
+	attPos = 0,0,0
+	attPos0 = 0.296870619,0.14384079,0.287496299
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 0
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	attN = bottom,CommonRoverBody_4293414266_0|0|0_0|-0.625|0_0|0|0_0|-0.625|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		AutostrutOff
+		{
+			actionGroup = None
+			active = False
+			wasActiveBeforePartWasAdjusted = False
+		}
+		AutostrutRoot
+		{
+			actionGroup = None
+			active = False
+			wasActiveBeforePartWasAdjusted = False
+		}
+		AutostrutHeaviest
+		{
+			actionGroup = None
+			active = False
+			wasActiveBeforePartWasAdjusted = False
+		}
+		AutostrutGrandparent
+		{
+			actionGroup = None
+			active = False
+			wasActiveBeforePartWasAdjusted = False
+		}
+		ResourcesEnableFlow
+		{
+			actionGroup = None
+			active = False
+			wasActiveBeforePartWasAdjusted = False
+		}
+		ResourcesDisableFlow
+		{
+			actionGroup = None
+			active = False
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDeployableAntenna
+		isEnabled = True
+		currentRotation = (0, 0, 0, 1)
+		storedAnimationTime = 0
+		storedAnimationSpeed = 0
+		deployState = RETRACTED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ExtendPanelsAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ExtendAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RetractAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDataTransmitter
+		isEnabled = True
+		xmitIncomplete = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StartTransmissionAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoPart
+		isEnabled = True
+		packedVolume = 32
 		beingAttached = False
 		beingSettled = False
 		reinitResourcesOnStoreInVessel = False
